@@ -25,6 +25,9 @@ const {pages, residentsInPage} = paginationLogic(currentPage, residents)
             }
         </section>
 
+
+
+        {/**BOTONES DE PAGINADO */}
         <section className='flex justify-center gap-4 flex-wrap pb-8'>
             
             {
