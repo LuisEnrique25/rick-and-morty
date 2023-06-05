@@ -5,7 +5,7 @@ export const paginationList = ({pages, currentPart}) => {
             PAGES_PER_PARTS: []
         }
     }
-    console.log(pages);
+    
     
     //CANTIDAD DE RESIDENTES POR PAGINA
     const PAGES_PER_PARTS = 4;
