@@ -8,6 +8,7 @@ const ResidentsList = ({residents, location}) => {
     const [currentPage, setCurrentPage] = useState(FIRST_PAGE_PART)
     const {pages, residentsInPage} = paginationLogic(currentPage, residents)
 
+
     //PARA MOSTRAR BOTONES DE LA LISTA DE PAGINAS
     const [currentPart, setCurrentPart] = useState(FIRST_PAGE_PART)
     const {parts, pagesInPart} =paginationList({currentPart, pages})
@@ -19,8 +20,6 @@ const ResidentsList = ({residents, location}) => {
     const handlePagePlus = () => {
         if(currentPart < parts.length) setCurrentPart(currentPart+1)
     }
-
-
 
 
 
@@ -48,7 +47,7 @@ const ResidentsList = ({residents, location}) => {
 
         {/**BOTONES DE PAGINADO */}
         <section className='flex justify-center gap-4 flex-wrap items-center pb-8'>
-            <button onClick={handlePageMinus} className={`p-2 sm:px-3  rounded-md bg-green-400  text-black font-bold hover:bg-green-800 hover:text-white flex justify-center items-center`}><i className='bx bx-chevrons-left'></i></button>
+            <button onClick={handlePageMinus} className={`p-2 sm:px-3 rounded-md   text-black font-bold  flex justify-center items-center ${currentPart === 1 ?'bg-gray-700 cursor-auto  ':'bg-green-400 hover:bg-green-800 hover:text-white'}`}><i className='bx bx-chevrons-left'></i></button>
 
 
             <div className='flex justify-center items-center gap-2 sm:gap-4'>
@@ -60,7 +59,7 @@ const ResidentsList = ({residents, location}) => {
             </div>
 
 
-            <button onClick={handlePagePlus} className={`p-2 sm:px-3 rounded-md bg-green-400  text-black font-bold hover:bg-green-800 hover:text-white flex justify-center items-center`}><i className='bx bx-chevrons-right'></i></button>
+            <button onClick={handlePagePlus} className={`p-2 sm:px-3 rounded-md   text-black font-bold  flex justify-center items-center ${currentPart === parts.length ?'bg-gray-700 cursor-auto  ':'bg-green-400 hover:bg-green-800 hover:text-white'}`}><i className='bx bx-chevrons-right'></i></button>
 
         </section>
 
