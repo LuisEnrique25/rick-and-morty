@@ -14,7 +14,7 @@ const DarkMode = () => {
           setIsDark("dark")
           localStorage.setItem("theme", "dark")
         }
-        console.log(isDark + " - " + localStorage.theme)
+
     }
     const handleResetLS = () => {
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -35,15 +35,14 @@ const DarkMode = () => {
 
 
   return (
-    <div>
-        <button onClick={handleIsDark} className="bg-green-400 dark:bg-green-950 p-3 rounded-md">{(isDark === "light") ? "Light" : "Dark"}</button>
-          <button onClick={handleResetLS} className="bg-green-400 dark:bg-green-950 p-3 rounded-md">RESET LS</button>
+    <div className="fixed flex flex-col right-0 top-24 opacity-30 hover:opacity-100  text-2xl">
+        <button onClick={handleIsDark} className="bg-slate-400/30 hover:bg-white/50 backdrop-blur dark:bg-slate-950/30 dark:hover:dark:bg-slate-950/50 p-1 sm:p-2 rounded-md flex justify-center items-center">{(isDark === "light") ? <i className='bx bxs-sun text-yellow-500'></i> :<i className='bx bxs-moon  text-blue-800' ></i> }</button>
+          <button onClick={handleResetLS} className="bg-slate-400/30 hover:bg-white/50 backdrop-blur dark:bg-slate-950/30 dark:hover:dark:bg-slate-950/50 p-1 sm:p-3 rounded-md flex justify-center items-center "><i className='bx bx-desktop text-gray-900 dark:text-gray-500'></i></button>
     </div>
   )
 }
 
 export default DarkMode
-
 
 
 
