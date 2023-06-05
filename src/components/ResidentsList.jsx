@@ -48,19 +48,19 @@ const ResidentsList = ({residents, location}) => {
 
         {/**BOTONES DE PAGINADO */}
         <section className='flex justify-center gap-4 flex-wrap items-center pb-8'>
-            <button onClick={handlePageMinus} className={`p-2 sm:px-3  rounded-md bg-green-400  text-black font-bold hover:bg-green-800 hover:text-white`}>{"<"}</button>
+            <button onClick={handlePageMinus} className={`p-2 sm:px-3  rounded-md bg-green-400  text-black font-bold hover:bg-green-800 hover:text-white flex justify-center items-center`}><i className='bx bx-chevrons-left'></i></button>
 
 
-            <div className='flex justify-center items-center gap-3'>
+            <div className='flex justify-center items-center gap-2 sm:gap-4'>
             {
                pagesInPart.map(page => (
-                    <button key={page} onClick={()=> setCurrentPage(page)} className={`p-2 px-3 rounded-md ${currentPage === page ? "bg-red-500 animate-wiggle" : "bg-green-500"} hover:animate-wiggle`}>{page}</button>
+                    <button key={page} onClick={()=> setCurrentPage(page)} className={`p-2 px-3  rounded-md ${currentPage === page ? "bg-red-500 animate-wiggle" : "bg-green-500"} hover:animate-wiggle`}>{page}</button>
                 )) 
                }
             </div>
 
 
-            <button onClick={handlePagePlus} className={`p-2 sm:px-3 rounded-md bg-green-400  text-black font-bold hover:bg-green-800 hover:text-white`}>{">"}</button>
+            <button onClick={handlePagePlus} className={`p-2 sm:px-3 rounded-md bg-green-400  text-black font-bold hover:bg-green-800 hover:text-white flex justify-center items-center`}><i className='bx bx-chevrons-right'></i></button>
 
         </section>
 
