@@ -59,7 +59,7 @@ const ResidentsList = ({residents, location}) => {
             </div>
 
 
-            <button onClick={handlePagePlus} className={`p-2 sm:px-3 rounded-md   text-black font-bold  flex justify-center items-center ${currentPart === parts.length ?'bg-gray-700 cursor-auto  ':'bg-green-400 hover:bg-green-800 hover:text-white'}`}><i className='bx bx-chevrons-right'></i></button>
+            <button onClick={handlePagePlus} className={`p-2 sm:px-3 rounded-md   text-black font-bold  flex justify-center items-center ${(parts.length < 1 || currentPart === parts.length) ?'bg-gray-700 cursor-auto  ':'bg-green-400 hover:bg-green-800 hover:text-white'}`}><i className='bx bx-chevrons-right'></i></button>
 
         </section>
 
