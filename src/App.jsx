@@ -8,7 +8,7 @@ import TopHeader from "./components/TopHeader"
 
 function App() {
   const [location, setLocation] = useState(null)
-  console.log(location)
+  //console.log(location)
   useEffect(() => {
     const URL = `https://rickandmortyapi.com/api/location/${getRandomDimension()}`
     axios.get(URL)

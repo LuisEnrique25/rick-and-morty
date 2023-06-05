@@ -11,7 +11,8 @@ export default {
         'spin-slow': 'spin 8s linear infinite',
         'neonalive' : 'neonalive 1s linear infinite alternate',
         'neondead' : 'neondead 1s linear infinite alternate',
-        'neonunknown' : 'neonunknown 1s linear infinite alternate'
+        'neonunknown' : 'neonunknown 1s linear infinite alternate',
+        'wiggle' : 'wiggle 0.5s linear infinite'
       },
       keyframes:{
         neonalive: {
@@ -25,6 +26,10 @@ export default {
         neonunknown: {
           '0%, 100%': { boxShadow : '0 0 5px rgb(107 114 128), 0 0 10px rgb(107 114 128), 0 0 20px rgb(170, 171, 175), 0 0 25px rgb(170, 171, 175) ' }, 
           '50%': { boxShadow: '0 0 5px rgb(107 114 128), 0 0 10px rgb(107 114 128), 0 0 20px rgb(170, 171, 175), 0 0 25px rgb(170, 171, 175), 0 0 30px rgb(170, 171, 175)'},
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-9deg)' },
+          '50%': { transform: 'rotate(9deg)' },
         }
       },
     },
