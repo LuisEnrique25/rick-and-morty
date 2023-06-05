@@ -1,4 +1,4 @@
-# rick-and-morty
+# Rick And Morty
 
 Rick and Morty Proyect was made with the api https://rickandmortyapi.com/ and axios was used to get the information.
 
