@@ -2,13 +2,15 @@ import React from 'react'
 import axios from 'axios';
 
 const Location = ({location, setLocation}) => {
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLocation(null)
     const newLocation = e.target.newLocation.value
     
-      const URL = `https://rickandmortyapi.com/api/location/${newLocation}`
+      const URL = `https://rickandmortyapi.com/api/location/?name=${newLocation}`
       axios.get(URL)
-        .then(({data}) => setLocation(data))
+        .then(({data}) => setLocation(data.results[0]))
         .catch((err) => console.log(err))
     
   }

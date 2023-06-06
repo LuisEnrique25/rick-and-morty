@@ -23,8 +23,10 @@ function App() {
       {/**
       */}
       <TopHeader/>
+
       <Location location={location} setLocation={setLocation}/>
       <ResidentsList residents={location?.residents} location={location}/>
+      
       <DarkMode/>
     </main>
   )

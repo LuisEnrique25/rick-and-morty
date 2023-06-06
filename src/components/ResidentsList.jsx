@@ -3,8 +3,9 @@ import ResidentCard from './ResidentCard'
 import { paginationLogic } from '../util/pagination'
 import { paginationList } from '../util/paginationList'
 
+const FIRST_PAGE_PART = 1
+
 const ResidentsList = ({residents, location}) => {
-    const FIRST_PAGE_PART = 1
     const [currentPage, setCurrentPage] = useState(FIRST_PAGE_PART)
     const {pages, residentsInPage} = paginationLogic(currentPage, residents)
 
