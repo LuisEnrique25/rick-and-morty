@@ -22,12 +22,13 @@ function App() {
     <main className='bg-[url("/images/bgD1.webp")] dark:bg-[url("/images/bgN1.webp")] bg-center bg-fixed bg-cover min-h-screen text-white transition-all duration-200 ease-in-out'>
 
       <TopHeader/>
-      {/**
-
       <Location location={location} setLocation={setLocation}/>
-      <ResidentsList residents={location?.residents} location={location}/>
-    */}
-    <Loader/>
+      
+      {
+        location ? <> <ResidentsList residents={location?.residents} location={location}/></> : <Loader/>
+      }
+      
+      
       <DarkMode/>
     </main>
   )

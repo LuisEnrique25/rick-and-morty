@@ -11,11 +11,9 @@ const Location = ({location, setLocation}) => {
       const URL = `https://rickandmortyapi.com/api/location/?name=${newLocation}`
       axios.get(URL)
         .then(({data}) => setLocation(data.results[0]))
-        .catch((err) => console.log(err))
+        .catch((err) => window.alert("That location is still unknown! Try another!"))
     
   }
-
-
 
   return (
     <section className='mt-[100px] sm:mt-[115px] text-black dark:text-white p-4 flex flex-col justify-center items-center'>
