@@ -19,7 +19,7 @@ const Location = ({location, setLocation}) => {
     <section className='mt-[100px] sm:mt-[115px] text-black dark:text-white p-4 flex flex-col justify-center items-center'>
 
       <form onSubmit={handleSubmit} className='w-fit p-3 flex'>
-        <input id="newLocation" placeholder='Type a location Id...' type="text" className='bg-white/40 text-green-900 dark:bg-gray-800/30 dark:focus:bg-gray-700 focus:bg-white dark:active:bg-gray-700 dark:text-green-300 outline-0 p-2 rounded-l-md' />
+        <input id="newLocation" placeholder='Type a location Name...' type="text" className='bg-white/40 text-green-900 dark:bg-gray-800/30 dark:focus:bg-gray-700 focus:bg-white dark:active:bg-gray-700 dark:text-green-300 outline-0 p-2 rounded-l-md' />
         <button className='bg-white/40 dark:bg-gray-800/30 dark:text-green-300 hover:bg-white p-2 rounded-r-md dark:hover:bg-gray-800 flex justify-center items-center'><i className='bx bx-search'></i></button>
       </form>
 
