@@ -7,11 +7,22 @@ const Location = ({location, setLocation}) => {
     e.preventDefault();
     setLocation(null)
     const newLocation = e.target.newLocation.value
-    
-      const URL = `https://rickandmortyapi.com/api/location/?name=${newLocation}`
-      axios.get(URL)
+      if(isNaN(newLocation)) {
+        console.log("No es numero")
+        const URL = `https://rickandmortyapi.com/api/location/?name=${newLocation}`
+        console.log(URL)
+        axios.get(URL)
         .then(({data}) => setLocation(data.results[0]))
         .catch((err) => window.alert("That location is still unknown! Try another!"))
+      } else {
+        console.log("es numero")
+        const URL = `https://rickandmortyapi.com/api/location/${newLocation}`
+        console.log(URL)
+        axios.get(URL)
+      .then(({data}) => setLocation(data))
+      .catch((err) => console.log(err))
+      } 
+      
     
   }
 
@@ -19,7 +30,7 @@ const Location = ({location, setLocation}) => {
     <section className='mt-[100px] sm:mt-[115px] text-black dark:text-white p-4 flex flex-col justify-center items-center'>
 
       <form onSubmit={handleSubmit} className='w-fit p-3 flex'>
-        <input id="newLocation" placeholder='Type a location Name...' type="text" className='bg-white/40 text-green-900 dark:bg-gray-800/30 dark:focus:bg-gray-700 focus:bg-white dark:active:bg-gray-700 dark:text-green-300 outline-0 p-2 rounded-l-md' />
+        <input id="newLocation" placeholder='Type Location Name/Id...' type="text" className='bg-white/40 text-green-900 dark:bg-gray-800/30 dark:focus:bg-gray-700 focus:bg-white dark:active:bg-gray-700 dark:text-green-300 outline-0 p-2 rounded-l-md' />
         <button className='bg-white/40 dark:bg-gray-800/30 dark:text-green-300 hover:bg-white p-2 rounded-r-md dark:hover:bg-gray-800 flex justify-center items-center'><i className='bx bx-search'></i></button>
       </form>
 
