@@ -8,19 +8,15 @@ const Location = ({location, setLocation}) => {
     setLocation(null)
     const newLocation = e.target.newLocation.value
       if(isNaN(newLocation)) {
-        console.log("No es numero")
         const URL = `https://rickandmortyapi.com/api/location/?name=${newLocation}`
-        console.log(URL)
         axios.get(URL)
         .then(({data}) => setLocation(data.results[0]))
         .catch((err) => window.alert("That location is still unknown! Try another!"))
       } else {
-        console.log("es numero")
         const URL = `https://rickandmortyapi.com/api/location/${newLocation}`
-        console.log(URL)
         axios.get(URL)
-      .then(({data}) => setLocation(data))
-      .catch((err) => console.log(err))
+        .then(({data}) => setLocation(data))
+        .catch((err) =>window.alert("That location is still unknown! Try another!"))
       } 
       
     
