@@ -2,7 +2,7 @@
 
 Rick and Morty Proyect was made with the api https://rickandmortyapi.com/ and axios was used to get the information.
 
-The page will display with the information for a random dimension until a specific dimension is searched for.
+The page will display with the information for a random dimension until a specific dimension is searched for by Name or Id.
 Information such as Name of the location, the type, dimension in which it is located and the population will be displayed.
 
 Cards will also be shown with the information of each resident of that location.
